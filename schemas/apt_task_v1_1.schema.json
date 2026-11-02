@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "APT-Bench Argument-Aware Reverse Task",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "writing_goal",
+    "central_question",
+    "argumentative_throughline",
+    "conceptual_scope",
+    "constraints"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "apt_task_v1_1"
+    },
+    "writing_goal": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "central_question": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "argumentative_throughline": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "conceptual_scope": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    }
+  }
+}
